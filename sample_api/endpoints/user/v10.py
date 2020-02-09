@@ -23,4 +23,4 @@ class GetListOfUsers(endpoint.BaseEndpoint):
 
 
 class GetUserByPk(endpoint.BaseEndpoint):
-    url = '/uid/<id>'
+    url = '/uid/<user_id>'
