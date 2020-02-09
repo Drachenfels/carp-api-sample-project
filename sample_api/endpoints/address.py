@@ -1,4 +1,4 @@
-from carp_api import endpoint
+from sample_api import endpoint
 
 
 class CreateUserAddress(endpoint.BaseEndpoint):
