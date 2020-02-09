@@ -6,9 +6,11 @@ class CreateUserAddress(endpoint.BaseEndpoint):
 
     methods = ['POST']
 
-    @classmethod
-    def get_final_url(cls, version, namespace, host=None):
-        return '/{version}/user/uid/<id>/address/'.format(version=version)
+    def get_final_url(self, host=None):
+        version = self.get_version()
+
+        return '/{version}/user/uid/<user_uid>/address/'.format(
+            version=version)
 
 
 class ChangeUserAddress(endpoint.BaseEndpoint):
@@ -16,10 +18,11 @@ class ChangeUserAddress(endpoint.BaseEndpoint):
 
     methods = ['PUT']
 
-    @classmethod
-    def get_final_url(cls, version, namespace, host=None):
+    def get_final_url(self, host=None):
+        version = self.get_version()
+
         return (
-            '/{version}/user/uid/<user_id>/address/uid/<address_id>/'.format(
+            '/{version}/user/uid/<user_uid>/address/uid/<address_uid>/'.format(
                 version=version
             )
         )
